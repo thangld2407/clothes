@@ -1,6 +1,7 @@
 <?php
     require_once "admin-login.php";
-    $id = $_GET['id']; ///method POST
+    $id = $_POST['id']; ///method POST
+    echo $id;
     $qry = "SELECT * FROM product WHERE pID = '$id' ";
     $result = $connection -> query($qry);
     $row = mysqli_fetch_array($result);
@@ -12,7 +13,7 @@
     $price = $row['pPrice'];
     if(isset($_POST['update'])) //POST -> GET
     { 
-        $idP = $_GET['id'];
+        $idP = $_POST['id'];
         $name = $_POST['name'];
         $image = "";
         $ctg = $_POST['ctg'];
@@ -35,7 +36,10 @@
         {
             $image = $row['pImage'];            
         }
-        $queryupdate = "UPDATE product SET pName = '$name' , pImage = '$image', cID = '$ctg', pDetail = '$detail' , sSize = '$trademark',pPrice = '$price', WHERE pID ='$id' ";
+        if(isset($_POST['id'])){
+            $id = $_POST['id'];
+        }
+        $queryupdate = "UPDATE product SET pName = '$name' , pImage = '$image', cID = '$ctg', pDetail = '$detail' , sSize = '$trademark',pPrice = '$price' WHERE pID ='$id' ";
         $rs = $connection -> query($queryupdate);
         if($rs)
         {?>
@@ -56,6 +60,7 @@
     </head>
 <center>
     <form action="" method="POST" enctype="multipart/form-data" id = "frm-update">
+
         <legend>UPDATE PRODUCT</legend>
         <?php
             $sqlP = "SELECT * FROM product WHERE pID = '$id'";
@@ -91,6 +96,7 @@
         <br><br>
         Price: <input type="text" name="price" value="<?=$row2['pPrice'] ?>" size="40" required>
         <br><br>   
+        <input type="text" hidden name="id" value = "<?=$id ?>">
         <input type="submit" name="update" value="UPDATE">
 
     </form>

@@ -19,7 +19,7 @@
             $destination = $img_url.$image;
             move_uploaded_file($temp_name,$destination);
         }
-        $sql = "INSERT INTO product(pName,cID, pImage,pDetail,sSize,pPrice,made_in) VALUES ('$name','$ctg','$image','$detail','$size','$price','$madein')";
+        $sql = "INSERT INTO product(pName,cID, pImage,pDetail,sSize,pPrice) VALUES ('$name','$ctg','$image','$detail','$size','$price')";
         $run = qryrun($sql); 
         if($run){?>
             <script>

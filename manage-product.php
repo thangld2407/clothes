@@ -69,11 +69,11 @@
                 <td  align = "center"> <font><?=$row['sSize'] ?></font> </td>
                 <td align = "center"> <font><?=$row['pPrice'] ?></font></td>
                 <td>
-                    <form class = "frm" action="update-product.php" >
+                    <form class = "frm" method ="POST" action="update-product.php" >
                         <input type="hidden" name = "id"  value="<?=$row[0]?>"><br><br>
                         <input class = "sizeof" type="submit" value="Update" > <br>
                     </form>
-                    <form  class = "frm" action="delete-product.php" onsubmit="return confirmDelete()">
+                    <form  class = "frm" method="GET" action="delete-product.php" onsubmit="return confirmDelete()">
                         <input type="hidden" name = "id" value="<?=$row[0]?>"><br><br>
                         <input  class = "sizeof" type="submit" value="Delete"> 
                     </form>
