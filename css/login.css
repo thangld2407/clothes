@@ -12,7 +12,7 @@
 
 body {
     padding: 290px 50px;
-    background-image: url(../image/1.png);
+    background-color: #ddd;
 }
 
 .login-form {
