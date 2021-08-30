@@ -1,0 +1,58 @@
+font {
+    font-size: 25px;
+}
+
+.sizeof {
+    font-size: 25px;
+    text-align: center;
+}
+
+form.frm {
+    display: inherit;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input[type="text"] {
+    width: 220px;
+    height: 50px;
+    margin: 20px 10px;
+    border-radius: 20px;
+}
+input[type="submit"] {
+    color: #525252;
+    background-color: #ddd(0, 0, 0);
+    padding: 10px 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #ddd;
+    opacity: 0.8;
+}
+table {
+    margin: 20px 20px;
+}
+table > tr {
+    background-color: #333;
+}
+.tb-table {
+    color: #fff;
+}
+.tr-table {
+    color: #333;
+}
+.bg-tr {
+    background-color: #333;
+}
+.table-size td {
+    font-size: 20px;
+}
+.table-color {
+    color: #fff;
+}
